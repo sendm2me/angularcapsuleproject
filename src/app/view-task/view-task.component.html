@@ -1,0 +1,27 @@
+<a href="add">New Employee</a>
+
+<table>
+  <tr>
+    <th>Task#</th>
+    <th>Parent#</th>
+    <th>Priority#</th>
+    <th>Start#</th>
+    <th>End#</th>
+  </tr>
+  <tr *ngFor="let task of tasks">
+    <td>{{task.task}}</td>
+	<div *ngIf='task.parentId'><td>{{task.parentId?.taskId}}</td></div>
+	<div *ngIf='task.parentId==null'><td>This Task Has No Parent</td></div>
+         
+    <td>{{task.priority}}</td>
+    <td>{{task.startDate}}</td>
+    <td>{{task.endDate}}</td>
+    <td>      
+      <button id="btnAdd" [disabled]="task.endDate!=null" [routerLink]="['/edit',task.taskId]">Edit Task</button> 
+    </td>
+    <td>      
+      <button id="btnAdd" [disabled]="task.endDate!=null" (click)="endTask(task.taskId)">End Task</button> 
+    </td>
+
+  </tr>
+</table>

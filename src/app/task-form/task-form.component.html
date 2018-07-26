@@ -1,0 +1,45 @@
+<p>
+  add/Update-Task-component works!
+</p>
+
+<section>
+<div class="row">
+  <div class="col-sm-8">
+    <form class="form-horizontal" (submit)="saveTask()">
+      <div class="form-group">
+     
+        <label class="control-label col-sm4">Task:</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text" name="task" [(ngModel)]="task.task" required/>
+        </div>
+
+        <label class="control-label col-sm4">Priority:</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="decimal" name="sal" [(ngModel)]="task.priority" required min="10000" max="25000"/>
+        </div>
+        
+		<label class="control-label col-sm4">ParentId:</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text" name="parentId" [(ngModel)]="parentId" required/>
+        </div>		
+
+        <label class="control-label col-sm4">StartDate:</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="date" name="doj" [(ngModel)]="startDate" (change)="updateStartDate()"/>
+        </div>
+	
+<div>
+  <button type="submit">save</button>  
+</div>
+
+      </div>
+    </form>
+  </div>
+</div> 
+
+<!--  <div class="pull-right">
+    <button class="btn btn-primary" (click)="saveEmployee()">save</button>
+    <button class="btn btn-danger" (click)="cancel()">cancel</button>
+  </div>
+-->
+</section>
