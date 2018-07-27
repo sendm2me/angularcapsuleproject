@@ -9,6 +9,7 @@ import {RouterModule,Routes} from '@angular/router';
 import { TaskService } from 'app/services/task.service';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { DatePipe } from '@angular/common';
+import { TaskFilterPipe } from './task-filter.pipe';
 
 const appRoutes: Routes=[
 {path:'',component:ViewTaskComponent},
@@ -21,7 +22,8 @@ const appRoutes: Routes=[
   declarations: [
     AppComponent,
     ViewTaskComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    TaskFilterPipe
   ],
   imports: [
     BrowserModule,
